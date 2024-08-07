@@ -1,0 +1,20 @@
+# docker-compose.yml
+version: '3.1'
+
+services:
+
+  db:
+    image: mysql:8.0
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: 141421356
+      MYSQL_DATABASE: nerv_database
+      MYSQL_USER: nerv
+      MYSQL_PASSWORD: nervDatabase
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:
